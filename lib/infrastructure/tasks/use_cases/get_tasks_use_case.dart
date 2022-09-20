@@ -10,6 +10,6 @@ class GetTasksUseCase {
   Future<List<TasksModel>> call() async {
     final response = await tasksRepository.getTasks();
     log('response: $response');
-    return response.data as List<TasksModel>;
+    return response;
   }
 }

@@ -9,12 +9,12 @@ part of 'task_model.dart';
 _$_TasksModel _$$_TasksModelFromJson(Map<String, dynamic> json) =>
     _$_TasksModel(
       taskId: json['taskId'] as String,
-      status: json['status'] as int,
+      status: json['status'] as String,
       name: json['name'] as String,
-      type: json['type'] as int,
+      type: json['type'] as String,
       description: json['description'] as String,
       finishDate: json['finishDate'] as String,
-      urgent: json['urgent'] as int,
+      urgent: json['urgent'] as String,
       syncTime: json['syncTime'] as String,
       file: json['file'] as String,
     );

@@ -14,7 +14,7 @@ enum RequestType {
 
 class NetworkService {
   NetworkService();
-  static const baseUrl = 'https://to-do.softwars.com.ua/tasks';
+  static const baseUrl = 'https://arisb3m47hz8.softwars.com.ua/tasks';
 
   static final BaseOptions _options = BaseOptions(
     baseUrl: baseUrl,

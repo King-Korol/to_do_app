@@ -21,12 +21,12 @@ TasksModel _$TasksModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$TasksModel {
   String get taskId => throw _privateConstructorUsedError;
-  int get status => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  int get type => throw _privateConstructorUsedError;
+  String get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get finishDate => throw _privateConstructorUsedError;
-  int get urgent => throw _privateConstructorUsedError;
+  String get urgent => throw _privateConstructorUsedError;
   String get syncTime => throw _privateConstructorUsedError;
   String get file => throw _privateConstructorUsedError;
 
@@ -43,12 +43,12 @@ abstract class $TasksModelCopyWith<$Res> {
       _$TasksModelCopyWithImpl<$Res>;
   $Res call(
       {String taskId,
-      int status,
+      String status,
       String name,
-      int type,
+      String type,
       String description,
       String finishDate,
-      int urgent,
+      String urgent,
       String syncTime,
       String file});
 }
@@ -81,7 +81,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -89,7 +89,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -101,7 +101,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       urgent: urgent == freezed
           ? _value.urgent
           : urgent // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       syncTime: syncTime == freezed
           ? _value.syncTime
           : syncTime // ignore: cast_nullable_to_non_nullable
@@ -123,12 +123,12 @@ abstract class _$$_TasksModelCopyWith<$Res>
   @override
   $Res call(
       {String taskId,
-      int status,
+      String status,
       String name,
-      int type,
+      String type,
       String description,
       String finishDate,
-      int urgent,
+      String urgent,
       String syncTime,
       String file});
 }
@@ -163,7 +163,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -171,7 +171,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -183,7 +183,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       urgent: urgent == freezed
           ? _value.urgent
           : urgent // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       syncTime: syncTime == freezed
           ? _value.syncTime
           : syncTime // ignore: cast_nullable_to_non_nullable
@@ -216,17 +216,17 @@ class _$_TasksModel implements _TasksModel {
   @override
   final String taskId;
   @override
-  final int status;
+  final String status;
   @override
   final String name;
   @override
-  final int type;
+  final String type;
   @override
   final String description;
   @override
   final String finishDate;
   @override
-  final int urgent;
+  final String urgent;
   @override
   final String syncTime;
   @override
@@ -285,12 +285,12 @@ class _$_TasksModel implements _TasksModel {
 abstract class _TasksModel implements TasksModel {
   const factory _TasksModel(
       {required final String taskId,
-      required final int status,
+      required final String status,
       required final String name,
-      required final int type,
+      required final String type,
       required final String description,
       required final String finishDate,
-      required final int urgent,
+      required final String urgent,
       required final String syncTime,
       required final String file}) = _$_TasksModel;
 
@@ -300,17 +300,17 @@ abstract class _TasksModel implements TasksModel {
   @override
   String get taskId;
   @override
-  int get status;
+  String get status;
   @override
   String get name;
   @override
-  int get type;
+  String get type;
   @override
   String get description;
   @override
   String get finishDate;
   @override
-  int get urgent;
+  String get urgent;
   @override
   String get syncTime;
   @override

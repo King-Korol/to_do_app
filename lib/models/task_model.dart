@@ -7,12 +7,12 @@ part 'task_model.g.dart';
 class TasksModel with _$TasksModel {
   const factory TasksModel({
     required String taskId,
-    required int status,
+    required String status,
     required String name,
-    required int type,
+    required String type,
     required String description,
     required String finishDate,
-    required int urgent,
+    required String urgent,
     required String syncTime,
     required String file,
   }) = _TasksModel;
