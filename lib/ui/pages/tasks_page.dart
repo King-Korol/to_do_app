@@ -17,6 +17,7 @@ class TasksPage extends StatelessWidget {
     return BlocProvider(
       create: (context) => TasksCubit(),
       child: BlocBuilder<TasksCubit, TasksState>(builder: (context, state) {
+        final TasksCubit testCubit = context.read<TasksCubit>();
         final tasks = state.tasks;
         return Scaffold(
           body: SafeArea(
@@ -29,72 +30,84 @@ class TasksPage extends StatelessWidget {
                       ),
                     ),
                   )
-                : Column(
-                    children: [
-                      ListView.builder(
-                        itemCount: tasks.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return Container(
-                            margin: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                              vertical: 5,
-                            ),
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 10,
-                            ),
-                            height: height * 0.08,
-                            color: Colors.grey,
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Icon(
-                                  tasks[index].type == '1'
-                                      ? Icons.work_outline
-                                      : Icons.home_outlined,
-                                  size: 30,
+                : state.isLoading
+                    ? CircularProgressIndicator(
+                        color: Colors.red,
+                      )
+                    : Column(
+                        children: [
+                          ListView.builder(
+                            itemCount: tasks.length,
+                            shrinkWrap: true,
+                            itemBuilder: (context, index) {
+                              return Container(
+                                margin: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                  vertical: 5,
                                 ),
-                                Column(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 10,
+                                ),
+                                height: height * 0.08,
+                                color: Colors.grey,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      tasks[index].name,
-                                      style: const TextStyle(
-                                        fontSize: 24,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                    Text(
-                                      tasks[index].finishDate,
-                                      style: const TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                InkWell(
-                                  onTap: () {
-                                    log('message');
-                                  },
-                                  child: Container(
-                                    height: height * 0.05,
-                                    width: height * 0.05,
-                                    decoration: const BoxDecoration(
-                                      color: Colors.yellow,
-                                    ),
-                                    child: const Icon(
-                                      Icons.done,
+                                    Icon(
+                                      tasks[index].type == '1'
+                                          ? Icons.work_outline
+                                          : Icons.home_outlined,
                                       size: 30,
                                     ),
-                                  ),
-                                )
-                              ],
-                            ),
-                          );
-                        },
+                                    Column(
+                                      children: [
+                                        Text(
+                                          tasks[index].name,
+                                          style: const TextStyle(
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                        Text(
+                                          tasks[index].finishDate,
+                                          style: const TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        log('message');
+                                        testCubit.changeTaskStatus(
+                                            tasks[index].taskId,
+                                            tasks[index].status == '1' ? 2 : 1);
+                                      },
+                                      child: Container(
+                                        height: height * 0.05,
+                                        width: height * 0.05,
+                                        decoration: BoxDecoration(
+                                          color: (tasks[index].status == '1'
+                                              ? null
+                                              : Colors.yellow),
+                                        ),
+                                        child: tasks[index].status == '2'
+                                            ? const Icon(
+                                                Icons.done,
+                                                size: 30,
+                                              )
+                                            : const SizedBox(),
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              );
+                            },
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
           ),
         );
       }),

@@ -16,4 +16,19 @@ class TasksDataSource {
           (json as List).map((json) => TasksModel.fromJson(json)).toList(),
     );
   }
+
+  Future<BaseResponse<List<TasksModel>>> changeTaskStatus(
+    String taskId,
+    int status,
+  ) async {
+    final response = await networkService.request(
+        requestType: RequestType.get,
+        path: '/$taskId',
+        body: {"status": status});
+    return BaseResponse<List<TasksModel>>.fromJson(
+      response.data,
+      (json) =>
+          (json as List).map((json) => TasksModel.fromJson(json)).toList(),
+    );
+  }
 }
