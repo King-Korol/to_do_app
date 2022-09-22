@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TasksState {
   bool get isLoading => throw _privateConstructorUsedError;
-  List<TasksModel>? get tasks => throw _privateConstructorUsedError;
+  List<TaskModel>? get tasks => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TasksStateCopyWith<TasksState> get copyWith =>
@@ -29,7 +29,7 @@ abstract class $TasksStateCopyWith<$Res> {
   factory $TasksStateCopyWith(
           TasksState value, $Res Function(TasksState) then) =
       _$TasksStateCopyWithImpl<$Res>;
-  $Res call({bool isLoading, List<TasksModel>? tasks});
+  $Res call({bool isLoading, List<TaskModel>? tasks});
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$TasksStateCopyWithImpl<$Res> implements $TasksStateCopyWith<$Res> {
       tasks: tasks == freezed
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
-              as List<TasksModel>?,
+              as List<TaskModel>?,
     ));
   }
 }
@@ -65,7 +65,7 @@ abstract class _$$_TasksStateCopyWith<$Res>
           _$_TasksState value, $Res Function(_$_TasksState) then) =
       __$$_TasksStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isLoading, List<TasksModel>? tasks});
+  $Res call({bool isLoading, List<TaskModel>? tasks});
 }
 
 /// @nodoc
@@ -91,7 +91,7 @@ class __$$_TasksStateCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
       tasks: tasks == freezed
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
-              as List<TasksModel>?,
+              as List<TaskModel>?,
     ));
   }
 }
@@ -99,15 +99,15 @@ class __$$_TasksStateCopyWithImpl<$Res> extends _$TasksStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TasksState implements _TasksState {
-  const _$_TasksState({this.isLoading = false, final List<TasksModel>? tasks})
+  const _$_TasksState({this.isLoading = false, final List<TaskModel>? tasks})
       : _tasks = tasks;
 
   @override
   @JsonKey()
   final bool isLoading;
-  final List<TasksModel>? _tasks;
+  final List<TaskModel>? _tasks;
   @override
-  List<TasksModel>? get tasks {
+  List<TaskModel>? get tasks {
     final value = _tasks;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -142,12 +142,12 @@ class _$_TasksState implements _TasksState {
 
 abstract class _TasksState implements TasksState {
   const factory _TasksState(
-      {final bool isLoading, final List<TasksModel>? tasks}) = _$_TasksState;
+      {final bool isLoading, final List<TaskModel>? tasks}) = _$_TasksState;
 
   @override
   bool get isLoading;
   @override
-  List<TasksModel>? get tasks;
+  List<TaskModel>? get tasks;
   @override
   @JsonKey(ignore: true)
   _$$_TasksStateCopyWith<_$_TasksState> get copyWith =>

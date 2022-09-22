@@ -14,52 +14,51 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-TasksModel _$TasksModelFromJson(Map<String, dynamic> json) {
-  return _TasksModel.fromJson(json);
+TaskModel _$TaskModelFromJson(Map<String, dynamic> json) {
+  return _TaskModel.fromJson(json);
 }
 
 /// @nodoc
-mixin _$TasksModel {
+mixin _$TaskModel {
   String get taskId => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
+  int get status => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
+  int get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get finishDate => throw _privateConstructorUsedError;
-  String get urgent => throw _privateConstructorUsedError;
+  int get urgent => throw _privateConstructorUsedError;
   String get syncTime => throw _privateConstructorUsedError;
   String get file => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TasksModelCopyWith<TasksModel> get copyWith =>
+  $TaskModelCopyWith<TaskModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $TasksModelCopyWith<$Res> {
-  factory $TasksModelCopyWith(
-          TasksModel value, $Res Function(TasksModel) then) =
-      _$TasksModelCopyWithImpl<$Res>;
+abstract class $TaskModelCopyWith<$Res> {
+  factory $TaskModelCopyWith(TaskModel value, $Res Function(TaskModel) then) =
+      _$TaskModelCopyWithImpl<$Res>;
   $Res call(
       {String taskId,
-      String status,
+      int status,
       String name,
-      String type,
+      int type,
       String description,
       String finishDate,
-      String urgent,
+      int urgent,
       String syncTime,
       String file});
 }
 
 /// @nodoc
-class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
-  _$TasksModelCopyWithImpl(this._value, this._then);
+class _$TaskModelCopyWithImpl<$Res> implements $TaskModelCopyWith<$Res> {
+  _$TaskModelCopyWithImpl(this._value, this._then);
 
-  final TasksModel _value;
+  final TaskModel _value;
   // ignore: unused_field
-  final $Res Function(TasksModel) _then;
+  final $Res Function(TaskModel) _then;
 
   @override
   $Res call({
@@ -81,7 +80,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -89,7 +88,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -101,7 +100,7 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
       urgent: urgent == freezed
           ? _value.urgent
           : urgent // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       syncTime: syncTime == freezed
           ? _value.syncTime
           : syncTime // ignore: cast_nullable_to_non_nullable
@@ -115,33 +114,32 @@ class _$TasksModelCopyWithImpl<$Res> implements $TasksModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_TasksModelCopyWith<$Res>
-    implements $TasksModelCopyWith<$Res> {
-  factory _$$_TasksModelCopyWith(
-          _$_TasksModel value, $Res Function(_$_TasksModel) then) =
-      __$$_TasksModelCopyWithImpl<$Res>;
+abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
+  factory _$$_TaskModelCopyWith(
+          _$_TaskModel value, $Res Function(_$_TaskModel) then) =
+      __$$_TaskModelCopyWithImpl<$Res>;
   @override
   $Res call(
       {String taskId,
-      String status,
+      int status,
       String name,
-      String type,
+      int type,
       String description,
       String finishDate,
-      String urgent,
+      int urgent,
       String syncTime,
       String file});
 }
 
 /// @nodoc
-class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
-    implements _$$_TasksModelCopyWith<$Res> {
-  __$$_TasksModelCopyWithImpl(
-      _$_TasksModel _value, $Res Function(_$_TasksModel) _then)
-      : super(_value, (v) => _then(v as _$_TasksModel));
+class __$$_TaskModelCopyWithImpl<$Res> extends _$TaskModelCopyWithImpl<$Res>
+    implements _$$_TaskModelCopyWith<$Res> {
+  __$$_TaskModelCopyWithImpl(
+      _$_TaskModel _value, $Res Function(_$_TaskModel) _then)
+      : super(_value, (v) => _then(v as _$_TaskModel));
 
   @override
-  _$_TasksModel get _value => super._value as _$_TasksModel;
+  _$_TaskModel get _value => super._value as _$_TaskModel;
 
   @override
   $Res call({
@@ -155,7 +153,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
     Object? syncTime = freezed,
     Object? file = freezed,
   }) {
-    return _then(_$_TasksModel(
+    return _then(_$_TaskModel(
       taskId: taskId == freezed
           ? _value.taskId
           : taskId // ignore: cast_nullable_to_non_nullable
@@ -163,7 +161,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -171,7 +169,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -183,7 +181,7 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
       urgent: urgent == freezed
           ? _value.urgent
           : urgent // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       syncTime: syncTime == freezed
           ? _value.syncTime
           : syncTime // ignore: cast_nullable_to_non_nullable
@@ -198,8 +196,8 @@ class __$$_TasksModelCopyWithImpl<$Res> extends _$TasksModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TasksModel implements _TasksModel {
-  const _$_TasksModel(
+class _$_TaskModel implements _TaskModel {
+  const _$_TaskModel(
       {required this.taskId,
       required this.status,
       required this.name,
@@ -210,23 +208,23 @@ class _$_TasksModel implements _TasksModel {
       required this.syncTime,
       required this.file});
 
-  factory _$_TasksModel.fromJson(Map<String, dynamic> json) =>
-      _$$_TasksModelFromJson(json);
+  factory _$_TaskModel.fromJson(Map<String, dynamic> json) =>
+      _$$_TaskModelFromJson(json);
 
   @override
   final String taskId;
   @override
-  final String status;
+  final int status;
   @override
   final String name;
   @override
-  final String type;
+  final int type;
   @override
   final String description;
   @override
   final String finishDate;
   @override
-  final String urgent;
+  final int urgent;
   @override
   final String syncTime;
   @override
@@ -234,14 +232,14 @@ class _$_TasksModel implements _TasksModel {
 
   @override
   String toString() {
-    return 'TasksModel(taskId: $taskId, status: $status, name: $name, type: $type, description: $description, finishDate: $finishDate, urgent: $urgent, syncTime: $syncTime, file: $file)';
+    return 'TaskModel(taskId: $taskId, status: $status, name: $name, type: $type, description: $description, finishDate: $finishDate, urgent: $urgent, syncTime: $syncTime, file: $file)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TasksModel &&
+            other is _$_TaskModel &&
             const DeepCollectionEquality().equals(other.taskId, taskId) &&
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -271,52 +269,52 @@ class _$_TasksModel implements _TasksModel {
 
   @JsonKey(ignore: true)
   @override
-  _$$_TasksModelCopyWith<_$_TasksModel> get copyWith =>
-      __$$_TasksModelCopyWithImpl<_$_TasksModel>(this, _$identity);
+  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
+      __$$_TaskModelCopyWithImpl<_$_TaskModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TasksModelToJson(
+    return _$$_TaskModelToJson(
       this,
     );
   }
 }
 
-abstract class _TasksModel implements TasksModel {
-  const factory _TasksModel(
+abstract class _TaskModel implements TaskModel {
+  const factory _TaskModel(
       {required final String taskId,
-      required final String status,
+      required final int status,
       required final String name,
-      required final String type,
+      required final int type,
       required final String description,
       required final String finishDate,
-      required final String urgent,
+      required final int urgent,
       required final String syncTime,
-      required final String file}) = _$_TasksModel;
+      required final String file}) = _$_TaskModel;
 
-  factory _TasksModel.fromJson(Map<String, dynamic> json) =
-      _$_TasksModel.fromJson;
+  factory _TaskModel.fromJson(Map<String, dynamic> json) =
+      _$_TaskModel.fromJson;
 
   @override
   String get taskId;
   @override
-  String get status;
+  int get status;
   @override
   String get name;
   @override
-  String get type;
+  int get type;
   @override
   String get description;
   @override
   String get finishDate;
   @override
-  String get urgent;
+  int get urgent;
   @override
   String get syncTime;
   @override
   String get file;
   @override
   @JsonKey(ignore: true)
-  _$$_TasksModelCopyWith<_$_TasksModel> get copyWith =>
+  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

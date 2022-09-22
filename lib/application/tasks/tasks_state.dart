@@ -7,6 +7,6 @@ part 'tasks_state.freezed.dart';
 class TasksState with _$TasksState {
   const factory TasksState({
     @Default(false) bool isLoading,
-    List<TasksModel>? tasks,
+    List<TaskModel>? tasks,
   }) = _TasksState;
 }

@@ -5,30 +5,28 @@ import 'package:to_do_app/models/task_model.dart';
 class TasksDataSource {
   final NetworkService networkService = NetworkService();
   TasksDataSource();
-  Future<BaseResponse<List<TasksModel>>> getTasks() async {
+  Future<BaseResponse<List<TaskModel>>> getTasks() async {
     final response = await networkService.request(
       requestType: RequestType.get,
       path: '',
     );
-    return BaseResponse<List<TasksModel>>.fromJson(
+    return BaseResponse<List<TaskModel>>.fromJson(
       response.data,
-      (json) =>
-          (json as List).map((json) => TasksModel.fromJson(json)).toList(),
+      (json) => (json as List).map((json) => TaskModel.fromJson(json)).toList(),
     );
   }
 
-  Future<BaseResponse<List<TasksModel>>> changeTaskStatus(
+  Future<BaseResponse<List<TaskModel>>> changeTaskStatus(
     String taskId,
     int status,
   ) async {
     final response = await networkService.request(
-        requestType: RequestType.get,
+        requestType: RequestType.put,
         path: '/$taskId',
         body: {"status": status});
-    return BaseResponse<List<TasksModel>>.fromJson(
+    return BaseResponse<List<TaskModel>>.fromJson(
       response.data,
-      (json) =>
-          (json as List).map((json) => TasksModel.fromJson(json)).toList(),
+      (json) => (json as List).map((json) => TaskModel.fromJson(json)).toList(),
     );
   }
 }

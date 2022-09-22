@@ -4,19 +4,19 @@ part 'task_model.freezed.dart';
 part 'task_model.g.dart';
 
 @freezed
-class TasksModel with _$TasksModel {
-  const factory TasksModel({
+class TaskModel with _$TaskModel {
+  const factory TaskModel({
     required String taskId,
-    required String status,
+    required int status,
     required String name,
-    required String type,
+    required int type,
     required String description,
     required String finishDate,
-    required String urgent,
+    required int urgent,
     required String syncTime,
     required String file,
-  }) = _TasksModel;
+  }) = _TaskModel;
 
-  factory TasksModel.fromJson(Map<String, dynamic> json) =>
-      _$TasksModelFromJson(json);
+  factory TaskModel.fromJson(Map<String, dynamic> json) =>
+      _$TaskModelFromJson(json);
 }

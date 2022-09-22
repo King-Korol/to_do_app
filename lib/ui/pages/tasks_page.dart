@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:to_do_app/application/tasks/tasks_cubit.dart';
 import 'package:to_do_app/application/tasks/tasks_state.dart';
+import 'package:to_do_app/ui/pages/task_review_page.dart';
 
 class TasksPage extends StatelessWidget {
   const TasksPage({super.key});
@@ -13,11 +14,11 @@ class TasksPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
+    // final width = MediaQuery.of(context).size.width;
     return BlocProvider(
       create: (context) => TasksCubit(),
       child: BlocBuilder<TasksCubit, TasksState>(builder: (context, state) {
-        final TasksCubit testCubit = context.read<TasksCubit>();
+        final TasksCubit tasksCubit = context.read<TasksCubit>();
         final tasks = state.tasks;
         return Scaffold(
           body: SafeArea(
@@ -31,8 +32,10 @@ class TasksPage extends StatelessWidget {
                     ),
                   )
                 : state.isLoading
-                    ? CircularProgressIndicator(
-                        color: Colors.red,
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: Colors.red,
+                        ),
                       )
                     : Column(
                         children: [
@@ -55,7 +58,7 @@ class TasksPage extends StatelessWidget {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Icon(
-                                      tasks[index].type == '1'
+                                      tasks[index].type == 1
                                           ? Icons.work_outline
                                           : Icons.home_outlined,
                                       size: 30,
@@ -81,19 +84,23 @@ class TasksPage extends StatelessWidget {
                                     InkWell(
                                       onTap: () {
                                         log('message');
-                                        testCubit.changeTaskStatus(
+                                        tasksCubit.changeTaskStatus(
                                             tasks[index].taskId,
-                                            tasks[index].status == '1' ? 2 : 1);
+                                            tasks[index].status == 1 ? 2 : 1);
                                       },
                                       child: Container(
                                         height: height * 0.05,
                                         width: height * 0.05,
                                         decoration: BoxDecoration(
-                                          color: (tasks[index].status == '1'
+                                          color: (tasks[index].status == 1
                                               ? null
                                               : Colors.yellow),
+                                          border:
+                                              Border.all(color: Colors.black),
+                                          borderRadius: const BorderRadius.all(
+                                              Radius.circular(10)),
                                         ),
-                                        child: tasks[index].status == '2'
+                                        child: tasks[index].status == 2
                                             ? const Icon(
                                                 Icons.done,
                                                 size: 30,
@@ -108,6 +115,20 @@ class TasksPage extends StatelessWidget {
                           ),
                         ],
                       ),
+          ),
+          floatingActionButton: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              FloatingActionButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(TaskReviewPage.route);
+                },
+                child: const Icon(
+                  Icons.add_outlined,
+                  size: 30,
+                ),
+              ),
+            ],
           ),
         );
       }),

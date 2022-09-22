@@ -5,11 +5,11 @@ class TasksRepository {
   final TasksDataSource tasksDataSource = TasksDataSource();
   TasksRepository();
 
-  Future<List<TasksModel>> getTasks() async {
+  Future<List<TaskModel>> getTasks() async {
     return (await tasksDataSource.getTasks()).data ?? [];
   }
 
-  Future<List<TasksModel>> changeTaskStatus(
+  Future<List<TaskModel>> changeTaskStatus(
     String taskId,
     int status,
   ) async {

@@ -5,7 +5,7 @@ class ChangeTaskStatusUseCase {
   final TasksRepository tasksRepository = TasksRepository();
   ChangeTaskStatusUseCase();
 
-  Future<List<TasksModel>> call(
+  Future<List<TaskModel>> call(
     String taskId,
     int status,
   ) async {
