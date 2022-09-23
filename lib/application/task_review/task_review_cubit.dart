@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:injectable/injectable.dart';
 import 'package:to_do_app/application/task_review/task_review_state.dart';
 import 'package:to_do_app/infrastructure/task_review/use_cases/create_task_use_case.dart';
 import 'package:to_do_app/models/task_model.dart';
 
+@injectable
 class TaskReviewCubit extends Cubit<TaskReviewState> {
   final CreateTaskUseCase createTaskUseCase = CreateTaskUseCase();
   TaskReviewCubit() : super(TaskReviewState());

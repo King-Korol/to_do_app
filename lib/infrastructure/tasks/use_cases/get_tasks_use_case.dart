@@ -1,6 +1,8 @@
+import 'package:injectable/injectable.dart';
 import 'package:to_do_app/infrastructure/tasks/tasks_repository.dart';
 import 'package:to_do_app/models/task_model.dart';
 
+@Injectable()
 class GetTasksUseCase {
   final TasksRepository tasksRepository = TasksRepository();
   GetTasksUseCase();
