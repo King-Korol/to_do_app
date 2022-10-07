@@ -56,8 +56,16 @@ class TasksApi {
     return model;
   }
 
-  Future<TasksResponseDataModel> putTask() async {
-    final response = await _dio.put('');
+  Future<TasksResponseDataModel> putTask({
+    required String taskId,
+    required int status,
+  }) async {
+    final response = await _dio.put(
+      '/$taskId',
+      data: {
+        "status": status,
+      },
+    );
     final model = TasksResponseDataModel.fromJson(response.data);
     return model;
   }

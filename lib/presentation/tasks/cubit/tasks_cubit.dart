@@ -9,17 +9,17 @@ import 'package:to_do_app/domain/tasks/use_cases/get_tasks_use_case.dart';
 @injectable
 class TasksCubit extends Cubit<TasksState> {
   final GetTasksUseCase getTasksUseCase;
-  // final ChangeTaskStatusUseCase changeTaskStatusUseCase =
-  //     ChangeTaskStatusUseCase();
+  final ChangeTaskStatusUseCase changeTaskStatusUseCase;
   TasksCubit({
     required this.getTasksUseCase,
+    required this.changeTaskStatusUseCase,
   }) : super(const TasksState()) {
     getTasks();
   }
 
   Future<void> getTasks() async {
     final response = await getTasksUseCase.call();
-    // log('tasks: $tasks');
+    log('getTasks response');
     response.tasks;
     emit(state.copyWith(tasks: response.tasks));
   }
@@ -29,8 +29,8 @@ class TasksCubit extends Cubit<TasksState> {
     int status,
   ) async {
     emit(state.copyWith(isLoading: true));
-    // final tasks = await changeTaskStatusUseCase.call(taskId, status);
-    // log('tasks: $tasks');
-    // emit(state.copyWith(tasks: tasks, isLoading: false));
+    final response = await changeTaskStatusUseCase.call(taskId, status);
+    log('changeTaskStatus response');
+    emit(state.copyWith(tasks: response.tasks, isLoading: false));
   }
 }

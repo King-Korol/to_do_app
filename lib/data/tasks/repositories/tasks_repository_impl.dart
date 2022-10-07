@@ -21,7 +21,14 @@ class TaskRepositoryImpl extends TasksRepository {
   }
 
   @override
-  Future<TasksDomainModel> changeTaskStatus() {
-    throw UnimplementedError();
+  Future<TasksDomainModel> changeTaskStatus({
+    required String taskId,
+    required int status,
+  }) async {
+    final tasksResponseDataModel = await tasksApi.putTask(
+      taskId: taskId,
+      status: status,
+    );
+    return tasksMapper.call(tasksResponseDataModel);
   }
 }
