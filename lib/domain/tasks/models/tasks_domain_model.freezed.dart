@@ -17,7 +17,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$TasksDomainModel {
   List<SingleTaskDomainModel> get tasks => throw _privateConstructorUsedError;
-  String get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TasksDomainModelCopyWith<TasksDomainModel> get copyWith =>
@@ -29,7 +28,7 @@ abstract class $TasksDomainModelCopyWith<$Res> {
   factory $TasksDomainModelCopyWith(
           TasksDomainModel value, $Res Function(TasksDomainModel) then) =
       _$TasksDomainModelCopyWithImpl<$Res>;
-  $Res call({List<SingleTaskDomainModel> tasks, String error});
+  $Res call({List<SingleTaskDomainModel> tasks});
 }
 
 /// @nodoc
@@ -44,17 +43,12 @@ class _$TasksDomainModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tasks = freezed,
-    Object? error = freezed,
   }) {
     return _then(_value.copyWith(
       tasks: tasks == freezed
           ? _value.tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<SingleTaskDomainModel>,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -66,7 +60,7 @@ abstract class _$$_TasksDomainModelCopyWith<$Res>
           _$_TasksDomainModel value, $Res Function(_$_TasksDomainModel) then) =
       __$$_TasksDomainModelCopyWithImpl<$Res>;
   @override
-  $Res call({List<SingleTaskDomainModel> tasks, String error});
+  $Res call({List<SingleTaskDomainModel> tasks});
 }
 
 /// @nodoc
@@ -83,17 +77,12 @@ class __$$_TasksDomainModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? tasks = freezed,
-    Object? error = freezed,
   }) {
     return _then(_$_TasksDomainModel(
       tasks: tasks == freezed
           ? _value._tasks
           : tasks // ignore: cast_nullable_to_non_nullable
               as List<SingleTaskDomainModel>,
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
     ));
   }
 }
@@ -101,8 +90,7 @@ class __$$_TasksDomainModelCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TasksDomainModel implements _TasksDomainModel {
-  _$_TasksDomainModel(
-      {required final List<SingleTaskDomainModel> tasks, required this.error})
+  _$_TasksDomainModel({required final List<SingleTaskDomainModel> tasks})
       : _tasks = tasks;
 
   final List<SingleTaskDomainModel> _tasks;
@@ -113,11 +101,8 @@ class _$_TasksDomainModel implements _TasksDomainModel {
   }
 
   @override
-  final String error;
-
-  @override
   String toString() {
-    return 'TasksDomainModel(tasks: $tasks, error: $error)';
+    return 'TasksDomainModel(tasks: $tasks)';
   }
 
   @override
@@ -125,15 +110,12 @@ class _$_TasksDomainModel implements _TasksDomainModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TasksDomainModel &&
-            const DeepCollectionEquality().equals(other._tasks, _tasks) &&
-            const DeepCollectionEquality().equals(other.error, error));
+            const DeepCollectionEquality().equals(other._tasks, _tasks));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_tasks),
-      const DeepCollectionEquality().hash(error));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tasks));
 
   @JsonKey(ignore: true)
   @override
@@ -143,13 +125,10 @@ class _$_TasksDomainModel implements _TasksDomainModel {
 
 abstract class _TasksDomainModel implements TasksDomainModel {
   factory _TasksDomainModel(
-      {required final List<SingleTaskDomainModel> tasks,
-      required final String error}) = _$_TasksDomainModel;
+      {required final List<SingleTaskDomainModel> tasks}) = _$_TasksDomainModel;
 
   @override
   List<SingleTaskDomainModel> get tasks;
-  @override
-  String get error;
   @override
   @JsonKey(ignore: true)
   _$$_TasksDomainModelCopyWith<_$_TasksDomainModel> get copyWith =>

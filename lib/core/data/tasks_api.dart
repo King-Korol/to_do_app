@@ -4,7 +4,8 @@ import 'dart:io';
 import 'package:dio/adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:to_do_app/core/data/models/tasks_response_data_model.dart';
+import 'package:to_do_app/core/data/models/base_response.dart';
+import 'package:to_do_app/core/data/models/task_data_model.dart';
 
 @singleton
 class TasksApi {
@@ -44,19 +45,30 @@ class TasksApi {
     return dio;
   }
 
-  Future<TasksResponseDataModel> getTasks() async {
+  Future<BaseResponse<List<TaskDataModel>>> getTasks() async {
     final response = await _dio.get('');
-    final model = TasksResponseDataModel.fromJson(response.data);
+    final model = BaseResponse.fromJson(
+      response.data as Map<String, dynamic>,
+      (json) => (json as List)
+          .map((e) => TaskDataModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
     return model;
   }
 
-  Future<TasksResponseDataModel> postTask() async {
+  Future<BaseResponse<List<TaskDataModel>>> postTask() async {
     final response = await _dio.post('');
-    final model = TasksResponseDataModel.fromJson(response.data);
+    final model = BaseResponse.fromJson(
+      response.data as Map<String, dynamic>,
+      (json) => (json as List)
+          .map((e) => TaskDataModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
     return model;
   }
 
-  Future<TasksResponseDataModel> putTask({
+  Future<BaseResponse<List<TaskDataModel>>> putTask({
     required String taskId,
     required int status,
   }) async {
@@ -66,7 +78,12 @@ class TasksApi {
         "status": status,
       },
     );
-    final model = TasksResponseDataModel.fromJson(response.data);
+    final model = BaseResponse.fromJson(
+      response.data as Map<String, dynamic>,
+      (json) => (json as List)
+          .map((e) => TaskDataModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
     return model;
   }
 

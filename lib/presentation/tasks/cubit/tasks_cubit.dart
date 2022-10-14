@@ -13,7 +13,7 @@ class TasksCubit extends Cubit<TasksState> {
   TasksCubit({
     required this.getTasksUseCase,
     required this.changeTaskStatusUseCase,
-  }) : super(const TasksState()) {
+  }) : super(const TasksState.initial()) {
     getTasks();
   }
 
@@ -21,16 +21,16 @@ class TasksCubit extends Cubit<TasksState> {
     final response = await getTasksUseCase.call();
     log('getTasks response');
     response.tasks;
-    emit(state.copyWith(tasks: response.tasks));
+    // emit(state.copyWith(tasks: response.tasks));
   }
 
   Future<void> changeTaskStatus(
     String taskId,
     int status,
   ) async {
-    emit(state.copyWith(isLoading: true));
+    // emit(state.copyWith(isLoading: true));
     final response = await changeTaskStatusUseCase.call(taskId, status);
     log('changeTaskStatus response');
-    emit(state.copyWith(tasks: response.tasks, isLoading: false));
+    // emit(state.copyWith(tasks: response.tasks, isLoading: false));
   }
 }

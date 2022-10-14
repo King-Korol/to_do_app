@@ -20,7 +20,7 @@ class TasksPage extends StatelessWidget {
       create: (context) => locator<TasksCubit>(),
       child: BlocBuilder<TasksCubit, TasksState>(builder: (context, state) {
         final TasksCubit tasksCubit = context.read<TasksCubit>();
-        final tasks = state.tasks;
+        // final tasks = state.when(initial: initial, loading: loading, networkError: networkError, unknownError: unknownError, success: success);
         return Scaffold(
           body: SafeArea(
             child: tasks == null

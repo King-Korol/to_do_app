@@ -7,6 +7,5 @@ part 'tasks_domain_model.freezed.dart';
 class TasksDomainModel with _$TasksDomainModel {
   factory TasksDomainModel({
     required List<SingleTaskDomainModel> tasks,
-    required String error,
   }) = _TasksDomainModel;
 }

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:to_do_app/domain/tasks/models/task_type_domain_model.dart';
 
 part 'single_task_domain_model.freezed.dart';
 
@@ -8,7 +9,7 @@ class SingleTaskDomainModel with _$SingleTaskDomainModel {
     required String taskId,
     required int status,
     required String name,
-    required int type,
+    required TaskTypeDomainModel type,
     required String description,
     required String finishDate,
     required int urgent,

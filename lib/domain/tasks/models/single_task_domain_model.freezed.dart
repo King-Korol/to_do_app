@@ -19,7 +19,7 @@ mixin _$SingleTaskDomainModel {
   String get taskId => throw _privateConstructorUsedError;
   int get status => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  int get type => throw _privateConstructorUsedError;
+  TaskTypeDomainModel get type => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   String get finishDate => throw _privateConstructorUsedError;
   int get urgent => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $SingleTaskDomainModelCopyWith<$Res> {
       {String taskId,
       int status,
       String name,
-      int type,
+      TaskTypeDomainModel type,
       String description,
       String finishDate,
       int urgent,
@@ -85,7 +85,7 @@ class _$SingleTaskDomainModelCopyWithImpl<$Res>
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskTypeDomainModel,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -121,7 +121,7 @@ abstract class _$$_SingleTaskDomainModelCopyWith<$Res>
       {String taskId,
       int status,
       String name,
-      int type,
+      TaskTypeDomainModel type,
       String description,
       String finishDate,
       int urgent,
@@ -169,7 +169,7 @@ class __$$_SingleTaskDomainModelCopyWithImpl<$Res>
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int,
+              as TaskTypeDomainModel,
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
@@ -215,7 +215,7 @@ class _$_SingleTaskDomainModel implements _SingleTaskDomainModel {
   @override
   final String name;
   @override
-  final int type;
+  final TaskTypeDomainModel type;
   @override
   final String description;
   @override
@@ -275,7 +275,7 @@ abstract class _SingleTaskDomainModel implements SingleTaskDomainModel {
       {required final String taskId,
       required final int status,
       required final String name,
-      required final int type,
+      required final TaskTypeDomainModel type,
       required final String description,
       required final String finishDate,
       required final int urgent,
@@ -289,7 +289,7 @@ abstract class _SingleTaskDomainModel implements SingleTaskDomainModel {
   @override
   String get name;
   @override
-  int get type;
+  TaskTypeDomainModel get type;
   @override
   String get description;
   @override

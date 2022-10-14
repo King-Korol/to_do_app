@@ -1,5 +1,10 @@
+import 'dart:developer';
+
+import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:to_do_app/core/data/exception_handler.dart';
 import 'package:to_do_app/core/data/tasks_api.dart';
+import 'package:to_do_app/core/domain/exceptions/exceptions.dart';
 import 'package:to_do_app/data/tasks/mappers/tasks_domain_model_mapper.dart';
 import 'package:to_do_app/domain/tasks/models/tasks_domain_model.dart';
 import 'package:to_do_app/domain/tasks/tasks_repository.dart';
@@ -16,8 +21,12 @@ class TaskRepositoryImpl extends TasksRepository {
 
   @override
   Future<TasksDomainModel> getTasks() async {
-    final tasksResponseDataModel = await tasksApi.getTasks();
-    return tasksMapper.call(tasksResponseDataModel);
+    final dataModel = await exceptionHandler(() async {
+      final tasksResponseDataModel = await tasksApi.getTasks();
+
+      return tasksResponseDataModel;
+    });
+    return tasksMapper.call(dataModel);
   }
 
   @override
@@ -25,10 +34,13 @@ class TaskRepositoryImpl extends TasksRepository {
     required String taskId,
     required int status,
   }) async {
-    final tasksResponseDataModel = await tasksApi.putTask(
-      taskId: taskId,
-      status: status,
-    );
-    return tasksMapper.call(tasksResponseDataModel);
+    final dataModel = await exceptionHandler(() async {
+      final tasksResponseDataModel = await tasksApi.putTask(
+        taskId: taskId,
+        status: status,
+      );
+      return tasksResponseDataModel;
+    });
+    return tasksMapper.call(dataModel);
   }
 }
