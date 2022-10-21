@@ -23,6 +23,7 @@ mixin _$TasksState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$TasksState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +43,7 @@ mixin _$TasksState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +54,7 @@ mixin _$TasksState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +64,7 @@ mixin _$TasksState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +74,7 @@ mixin _$TasksState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -136,6 +142,7 @@ class _$TasksInitialState implements TasksInitialState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) {
     return initial();
   }
@@ -148,6 +155,7 @@ class _$TasksInitialState implements TasksInitialState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) {
     return initial?.call();
   }
@@ -160,6 +168,7 @@ class _$TasksInitialState implements TasksInitialState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -176,6 +185,7 @@ class _$TasksInitialState implements TasksInitialState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) {
     return initial(this);
   }
@@ -188,6 +198,7 @@ class _$TasksInitialState implements TasksInitialState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) {
     return initial?.call(this);
   }
@@ -200,6 +211,7 @@ class _$TasksInitialState implements TasksInitialState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -259,6 +271,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) {
     return loading();
   }
@@ -271,6 +284,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) {
     return loading?.call();
   }
@@ -283,6 +297,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -299,6 +314,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) {
     return loading(this);
   }
@@ -311,6 +327,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) {
     return loading?.call(this);
   }
@@ -323,6 +340,7 @@ class _$TasksLoadingState implements TasksLoadingState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -383,6 +401,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) {
     return networkError();
   }
@@ -395,6 +414,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) {
     return networkError?.call();
   }
@@ -407,6 +427,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) {
     if (networkError != null) {
@@ -423,6 +444,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) {
     return networkError(this);
   }
@@ -435,6 +457,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) {
     return networkError?.call(this);
   }
@@ -447,6 +470,7 @@ class _$TasksNetworkErrorState implements TasksNetworkErrorState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) {
     if (networkError != null) {
@@ -507,6 +531,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) {
     return unknownError();
   }
@@ -519,6 +544,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) {
     return unknownError?.call();
   }
@@ -531,6 +557,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -547,6 +574,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) {
     return unknownError(this);
   }
@@ -559,6 +587,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) {
     return unknownError?.call(this);
   }
@@ -571,6 +600,7 @@ class _$TasksUnknownErrorState implements TasksUnknownErrorState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) {
     if (unknownError != null) {
@@ -659,6 +689,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     required TResult Function() networkError,
     required TResult Function() unknownError,
     required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
   }) {
     return success(tasks);
   }
@@ -671,6 +702,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
   }) {
     return success?.call(tasks);
   }
@@ -683,6 +715,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     TResult Function()? networkError,
     TResult Function()? unknownError,
     TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -699,6 +732,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     required TResult Function(TasksNetworkErrorState value) networkError,
     required TResult Function(TasksUnknownErrorState value) unknownError,
     required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
   }) {
     return success(this);
   }
@@ -711,6 +745,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
   }) {
     return success?.call(this);
   }
@@ -723,6 +758,7 @@ class _$TasksSuccessState implements TasksSuccessState {
     TResult Function(TasksNetworkErrorState value)? networkError,
     TResult Function(TasksUnknownErrorState value)? unknownError,
     TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -732,12 +768,179 @@ class _$TasksSuccessState implements TasksSuccessState {
   }
 }
 
-abstract class TasksSuccessState implements TasksState {
+abstract class TasksSuccessState implements TasksState, TasksStateWithData {
   const factory TasksSuccessState({required final List<TaskStateModel> tasks}) =
       _$TasksSuccessState;
 
   List<TaskStateModel> get tasks;
   @JsonKey(ignore: true)
   _$$TasksSuccessStateCopyWith<_$TasksSuccessState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$TasksReloadFailedStateCopyWith<$Res> {
+  factory _$$TasksReloadFailedStateCopyWith(_$TasksReloadFailedState value,
+          $Res Function(_$TasksReloadFailedState) then) =
+      __$$TasksReloadFailedStateCopyWithImpl<$Res>;
+  $Res call({List<TaskStateModel> tasks});
+}
+
+/// @nodoc
+class __$$TasksReloadFailedStateCopyWithImpl<$Res>
+    extends _$TasksStateCopyWithImpl<$Res>
+    implements _$$TasksReloadFailedStateCopyWith<$Res> {
+  __$$TasksReloadFailedStateCopyWithImpl(_$TasksReloadFailedState _value,
+      $Res Function(_$TasksReloadFailedState) _then)
+      : super(_value, (v) => _then(v as _$TasksReloadFailedState));
+
+  @override
+  _$TasksReloadFailedState get _value =>
+      super._value as _$TasksReloadFailedState;
+
+  @override
+  $Res call({
+    Object? tasks = freezed,
+  }) {
+    return _then(_$TasksReloadFailedState(
+      tasks: tasks == freezed
+          ? _value._tasks
+          : tasks // ignore: cast_nullable_to_non_nullable
+              as List<TaskStateModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TasksReloadFailedState implements TasksReloadFailedState {
+  const _$TasksReloadFailedState({required final List<TaskStateModel> tasks})
+      : _tasks = tasks;
+
+  final List<TaskStateModel> _tasks;
+  @override
+  List<TaskStateModel> get tasks {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_tasks);
+  }
+
+  @override
+  String toString() {
+    return 'TasksState.reloadFailed(tasks: $tasks)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$TasksReloadFailedState &&
+            const DeepCollectionEquality().equals(other._tasks, _tasks));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_tasks));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$TasksReloadFailedStateCopyWith<_$TasksReloadFailedState> get copyWith =>
+      __$$TasksReloadFailedStateCopyWithImpl<_$TasksReloadFailedState>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() networkError,
+    required TResult Function() unknownError,
+    required TResult Function(List<TaskStateModel> tasks) success,
+    required TResult Function(List<TaskStateModel> tasks) reloadFailed,
+  }) {
+    return reloadFailed(tasks);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? networkError,
+    TResult Function()? unknownError,
+    TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
+  }) {
+    return reloadFailed?.call(tasks);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? networkError,
+    TResult Function()? unknownError,
+    TResult Function(List<TaskStateModel> tasks)? success,
+    TResult Function(List<TaskStateModel> tasks)? reloadFailed,
+    required TResult orElse(),
+  }) {
+    if (reloadFailed != null) {
+      return reloadFailed(tasks);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(TasksInitialState value) initial,
+    required TResult Function(TasksLoadingState value) loading,
+    required TResult Function(TasksNetworkErrorState value) networkError,
+    required TResult Function(TasksUnknownErrorState value) unknownError,
+    required TResult Function(TasksSuccessState value) success,
+    required TResult Function(TasksReloadFailedState value) reloadFailed,
+  }) {
+    return reloadFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(TasksInitialState value)? initial,
+    TResult Function(TasksLoadingState value)? loading,
+    TResult Function(TasksNetworkErrorState value)? networkError,
+    TResult Function(TasksUnknownErrorState value)? unknownError,
+    TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
+  }) {
+    return reloadFailed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(TasksInitialState value)? initial,
+    TResult Function(TasksLoadingState value)? loading,
+    TResult Function(TasksNetworkErrorState value)? networkError,
+    TResult Function(TasksUnknownErrorState value)? unknownError,
+    TResult Function(TasksSuccessState value)? success,
+    TResult Function(TasksReloadFailedState value)? reloadFailed,
+    required TResult orElse(),
+  }) {
+    if (reloadFailed != null) {
+      return reloadFailed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TasksReloadFailedState
+    implements TasksState, TasksStateWithData {
+  const factory TasksReloadFailedState(
+      {required final List<TaskStateModel> tasks}) = _$TasksReloadFailedState;
+
+  List<TaskStateModel> get tasks;
+  @JsonKey(ignore: true)
+  _$$TasksReloadFailedStateCopyWith<_$TasksReloadFailedState> get copyWith =>
       throw _privateConstructorUsedError;
 }

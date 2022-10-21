@@ -6,6 +6,7 @@ import 'package:to_do_app/core/data/exception_handler.dart';
 import 'package:to_do_app/core/data/tasks_api.dart';
 import 'package:to_do_app/core/domain/exceptions/exceptions.dart';
 import 'package:to_do_app/data/tasks/mappers/tasks_domain_model_mapper.dart';
+import 'package:to_do_app/domain/create_task/models/new_task_domain_model.dart';
 import 'package:to_do_app/domain/tasks/models/tasks_domain_model.dart';
 import 'package:to_do_app/domain/tasks/tasks_repository.dart';
 
@@ -43,4 +44,6 @@ class TaskRepositoryImpl extends TasksRepository {
     });
     return tasksMapper.call(dataModel);
   }
+
+  Future<void> createTask(NewTaskDomainModel newTaskDomainModel) async {}
 }
