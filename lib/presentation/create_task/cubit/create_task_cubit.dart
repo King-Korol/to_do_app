@@ -1,16 +1,17 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
-import 'package:to_do_app/domain/task_review/use_cases/create_task_use_case.dart';
-import 'package:to_do_app/core/data/models/task_data_model.dart';
-import 'package:to_do_app/presentation/task_review/cubit/task_review_state.dart';
+import 'package:to_do_app/domain/create_task/use_cases/create_task_use_case.dart';
+import 'package:to_do_app/presentation/create_task/cubit/create_task_state.dart';
 
 @injectable
-class TaskReviewCubit extends Cubit<TaskReviewState> {
-  // final CreateTaskUseCase createTaskUseCase = CreateTaskUseCase();
-  TaskReviewCubit() : super(TaskReviewState());
+class CreateTaskCubit extends Cubit<CreateTaskState> {
+  final CreateTaskUseCase createTaskUseCase;
+  CreateTaskCubit({
+    required this.createTaskUseCase,
+  }) : super(CreateTaskState.initial());
 
   Future<void> createTask() async {
-    emit(state.copyWith(isLoading: true));
+    // emit(state.copyWith(isLoading: true));
     // final response = await createTaskUseCase.call(
     //   const TaskDataModel(
     //     taskId: '389',

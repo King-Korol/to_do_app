@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:to_do_app/presentation/create_task/create_task_page.dart';
 import 'package:to_do_app/presentation/login/login_page.dart';
 import 'package:to_do_app/presentation/splash/splash_page.dart';
-import 'package:to_do_app/presentation/task_review/task_review_page.dart';
 import 'package:to_do_app/presentation/tasks/tasks_page.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -23,9 +23,9 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         builder: (_) => const TasksPage(),
         settings: settings,
       );
-    case TaskReviewPage.route:
+    case CreateTaskPage.route:
       return MaterialPageRoute(
-        builder: (_) => const TaskReviewPage(),
+        builder: (_) => const CreateTaskPage(),
         settings: settings,
       );
     default:

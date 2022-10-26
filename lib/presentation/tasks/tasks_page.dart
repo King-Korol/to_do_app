@@ -2,11 +2,10 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:to_do_app/core/domain/exceptions/exceptions.dart';
 import 'package:to_do_app/core/injection.dart';
+import 'package:to_do_app/presentation/create_task/create_task_page.dart';
 import 'package:to_do_app/presentation/tasks/cubit/tasks_cubit.dart';
 import 'package:to_do_app/presentation/tasks/cubit/tasks_state.dart';
-import 'package:to_do_app/presentation/task_review/task_review_page.dart';
 
 class TasksPage extends StatelessWidget {
   const TasksPage({super.key});
@@ -24,7 +23,7 @@ class TasksPage extends StatelessWidget {
           children: [
             FloatingActionButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(TaskReviewPage.route);
+                Navigator.of(context).pushNamed(CreateTaskPage.route);
               },
               child: const Icon(
                 Icons.add_outlined,
