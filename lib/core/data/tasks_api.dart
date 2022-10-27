@@ -57,8 +57,14 @@ class TasksApi {
     return model;
   }
 
-  Future<BaseResponse<List<TaskDataModel>>> postTask() async {
-    final response = await _dio.post('');
+  Future<BaseResponse<List<TaskDataModel>>> postTask(
+      TaskDataModel taskDataModel) async {
+    final response = await _dio.post(
+      '',
+      data: [
+        taskDataModel.toJson(),
+      ],
+    );
     final model = BaseResponse.fromJson(
       response.data as Map<String, dynamic>,
       (json) => (json as List)

@@ -9,5 +9,5 @@ abstract class TasksRepository {
     required int status,
   });
 
-  Future<void> createTask(NewTaskDomainModel newTaskDomainModel);
+  Future<TasksDomainModel> createTask(NewTaskDomainModel newTaskDomainModel);
 }

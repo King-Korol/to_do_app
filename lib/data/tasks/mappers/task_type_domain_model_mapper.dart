@@ -13,4 +13,15 @@ class TaskTypeDomainModelMapper {
         return TaskTypeDomainModel.unknown;
     }
   }
+
+  int reverseCall(TaskTypeDomainModel taskType) {
+    switch (taskType) {
+      case TaskTypeDomainModel.work:
+        return 1;
+      case TaskTypeDomainModel.personal:
+        return 2;
+      default:
+        return 0;
+    }
+  }
 }

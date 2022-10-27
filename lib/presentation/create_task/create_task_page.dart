@@ -28,20 +28,27 @@ class _Content extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: BlocConsumer<CreateTaskCubit, CreateTaskState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            return state.maybeMap(
-              initial: (state) {
-                return const _CreatingTask();
-              },
-              loading: (state) {
-                return const _LoadingOverlay();
-              },
-              orElse: () {
-                return const SizedBox.shrink();
-              },
-            );
-          }),
+          listener: (context, state) {
+        state.maybeWhen(
+          error: () {},
+          created: () {
+            Navigator.of(context).pop();
+          },
+          orElse: () {},
+        );
+      }, builder: (context, state) {
+        return state.maybeMap(
+          initial: (state) {
+            return const _CreatingTask();
+          },
+          loading: (state) {
+            return const _LoadingOverlay();
+          },
+          orElse: () {
+            return const SizedBox.shrink();
+          },
+        );
+      }),
     );
   }
 }
