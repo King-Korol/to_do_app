@@ -1,7 +1,9 @@
+import 'package:injectable/injectable.dart';
 import 'package:to_do_app/domain/create_task/models/new_task_domain_model.dart';
 import 'package:to_do_app/domain/tasks/models/tasks_domain_model.dart';
 import 'package:to_do_app/domain/tasks/tasks_repository.dart';
 
+@injectable
 class CreateTaskUseCase {
   final TasksRepository tasksRepository;
   CreateTaskUseCase({required this.tasksRepository});
