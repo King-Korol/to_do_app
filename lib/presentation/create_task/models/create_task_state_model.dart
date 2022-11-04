@@ -12,7 +12,7 @@ class CreateTaskStateModel with _$CreateTaskStateModel {
     @Default(TaskTypeDomainModel.personal) TaskTypeDomainModel type,
     DateTime? finishDate,
     @Default(false) bool urgent,
-    String? description,
+    @Default('') String description,
     String? file,
   }) = _CreateTaskStateModel;
 }

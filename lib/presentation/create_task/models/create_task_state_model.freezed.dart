@@ -21,7 +21,7 @@ mixin _$CreateTaskStateModel {
   TaskTypeDomainModel get type => throw _privateConstructorUsedError;
   DateTime? get finishDate => throw _privateConstructorUsedError;
   bool get urgent => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   String? get file => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -40,7 +40,7 @@ abstract class $CreateTaskStateModelCopyWith<$Res> {
       TaskTypeDomainModel type,
       DateTime? finishDate,
       bool urgent,
-      String? description,
+      String description,
       String? file});
 }
 
@@ -87,7 +87,7 @@ class _$CreateTaskStateModelCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       file: file == freezed
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -109,7 +109,7 @@ abstract class _$$_CreateTaskStateModelCopyWith<$Res>
       TaskTypeDomainModel type,
       DateTime? finishDate,
       bool urgent,
-      String? description,
+      String description,
       String? file});
 }
 
@@ -158,7 +158,7 @@ class __$$_CreateTaskStateModelCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       file: file == freezed
           ? _value.file
           : file // ignore: cast_nullable_to_non_nullable
@@ -176,7 +176,7 @@ class _$_CreateTaskStateModel implements _CreateTaskStateModel {
       this.type = TaskTypeDomainModel.personal,
       this.finishDate,
       this.urgent = false,
-      this.description,
+      this.description = '',
       this.file});
 
   @override
@@ -194,7 +194,8 @@ class _$_CreateTaskStateModel implements _CreateTaskStateModel {
   @JsonKey()
   final bool urgent;
   @override
-  final String? description;
+  @JsonKey()
+  final String description;
   @override
   final String? file;
 
@@ -244,7 +245,7 @@ abstract class _CreateTaskStateModel implements CreateTaskStateModel {
       final TaskTypeDomainModel type,
       final DateTime? finishDate,
       final bool urgent,
-      final String? description,
+      final String description,
       final String? file}) = _$_CreateTaskStateModel;
 
   @override
@@ -258,7 +259,7 @@ abstract class _CreateTaskStateModel implements CreateTaskStateModel {
   @override
   bool get urgent;
   @override
-  String? get description;
+  String get description;
   @override
   String? get file;
   @override

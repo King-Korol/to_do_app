@@ -3,6 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:to_do_app/domain/create_task/use_cases/create_task_use_case.dart';
 import 'package:to_do_app/presentation/create_task/cubit/create_task_state.dart';
 import 'package:to_do_app/presentation/create_task/mappers/create_task_state_mapper.dart';
+import 'package:to_do_app/presentation/create_task/models/create_task_state_model.dart';
 
 @injectable
 class CreateTaskCubit extends Cubit<CreateTaskState> {
@@ -11,25 +12,28 @@ class CreateTaskCubit extends Cubit<CreateTaskState> {
   CreateTaskCubit({
     required this.createTaskUseCase,
     required this.createTaskStateMapper,
-  }) : super(const CreateTaskState.initial());
+  }) : super(const CreateTaskState.initial(createTask: CreateTaskStateModel()));
 
   Future<void> createTask() async {
-    state.maybeWhen(
-      initial: (state) async {
-        try {
-          emit(const CreateTaskState.loading());
-          final createTask = createTaskStateMapper.call(state!);
-          await createTaskUseCase.call(createTask);
-          emit(const CreateTaskState.created());
-        } catch (error) {
-          emit(const CreateTaskState.error());
-        }
-      },
-      orElse: () {},
-    );
+    if (state is CreateTaskLoadingState) return;
+
+    try {
+      emit(CreateTaskState.loading(createTask: state.createTask));
+      final createTask = createTaskStateMapper.call(state.createTask);
+      await createTaskUseCase.call(createTask);
+      emit(CreateTaskState.created(createTask: state.createTask));
+    } catch (error) {
+      emit(CreateTaskState.error(createTask: state.createTask));
+    }
   }
 
-  void changedUrgentValue() {
-    emit(const CreateTaskState.initial());
+  void changedUrgentValue(bool isUrgent) {
+    if (state is CreateTaskLoadingState) return;
+
+    emit(
+      CreateTaskState.initial(
+        createTask: state.createTask.copyWith(urgent: isUrgent),
+      ),
+    );
   }
 }

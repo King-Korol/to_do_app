@@ -6,12 +6,18 @@ part 'create_task_state.freezed.dart';
 @freezed
 class CreateTaskState with _$CreateTaskState {
   const factory CreateTaskState.initial({
-    CreateTaskStateModel? createTask,
+    required CreateTaskStateModel createTask,
   }) = CreateTaskInitialState;
 
-  const factory CreateTaskState.loading() = CreateTaskLoadingState;
+  const factory CreateTaskState.loading({
+    required CreateTaskStateModel createTask,
+  }) = CreateTaskLoadingState;
 
-  const factory CreateTaskState.created() = CreateTaskCreatedState;
+  const factory CreateTaskState.created({
+    required CreateTaskStateModel createTask,
+  }) = CreateTaskCreatedState;
 
-  const factory CreateTaskState.error() = CreateTaskErrorState;
+  const factory CreateTaskState.error({
+    required CreateTaskStateModel createTask,
+  }) = CreateTaskErrorState;
 }

@@ -30,8 +30,8 @@ class _Content extends StatelessWidget {
       child: BlocConsumer<CreateTaskCubit, CreateTaskState>(
           listener: (context, state) {
         state.maybeWhen(
-          error: () {},
-          created: () {
+          error: (createTask) {},
+          created: (createTask) {
             Navigator.of(context).pop();
           },
           orElse: () {},
