@@ -1,0 +1,11 @@
+{
+    "dart.flutterSdkPath": ".fvm/flutter_sdk",
+
+    "editor.lineHeight": 0,
+
+    "editor.minimap.enabled": false,
+
+    "window.zoomLevel": -1,
+
+    "editor.fontSize": 14
+}
